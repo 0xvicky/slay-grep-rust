@@ -14,15 +14,3 @@ fn main() {
         process::exit(1);
     }
 }
-
-//std::env
-//std::fs
-//&'static str in Result
-//.clone() method
-//.collect() method
-//diff b/w unwrap and unwrap_or_else
-//read_to_string() //accept the file path and return the content in form of string
-//dbg!()
-//Box <dyn Err>
-//use of ?
-//'a

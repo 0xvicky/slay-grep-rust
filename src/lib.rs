@@ -1,4 +1,3 @@
-use std::env;
 use std::error::Error;
 use std::fs;
 
@@ -10,12 +9,13 @@ pub struct Config {
 
 impl Config {
     pub fn build(args: &Vec<String>) -> Result<Config, &'static str> {
-        if args.len() < 3 {
+        if args.len() < 4 {
             return Err("Not Enough Arguments");
         }
         let query = args[1].clone();
         let file_path = args[2].clone();
-        let is_ignore_case = env::var("IGNORE_CASE").is_ok();
+        let is_ignore_case = if args[3] == "1" { true } else { false };
+        // let is_ignore_case = env::var("IGNORE_CASE").is_ok();
         dbg!(is_ignore_case);
 
         Ok(Config {
